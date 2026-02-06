@@ -23,8 +23,8 @@
 \usepackage{graphicx}
 %\usepackage[disable]{todonotes}
 \usepackage{todonotes}
-\usepackage{subcaption}
-\usepackage{algorithm}
+%\usepackage{subcaption}
+%\usepackage{algorithm}
 \usepackage[]{algpseudocode}
 \usepackage{textcomp, mathcomp}
 \usepackage{array}
@@ -32,6 +32,7 @@
 \usepackage{amssymb}
 \usepackage{hyperref}
 \usepackage{color}\usepackage{lipsum}
+\usepackage[numbers,sort&compress]{natbib}
 
 \newcommand\blfootnote[1]{%
   \begingroup
@@ -50,5 +51,12 @@
 
 Network visualization plays a significant role in understanding the topology of a network. Different visualizations have different properties required for the applications considered. We have developed a neural network–based model to recognize some fundamental properties of network visualizations. We study the capabilities of simple neural networks to recognize these properties, the key factors that improve the accuracy of the models, and the interpretability of the model’s decisions.
 
-\bibliography{references}
+\section{Introduction}
+Neural networks have been extremely successful in computer vision~\cite{krizhevsky2012imagenet,russakovsky2015imagenet,long2015fully}. In this work, we use simple neural networks to answer some fundamental classification tasks. Given a network layout, we aim to recognize whether the layout image shows a connected network or not. We also determine whether the image represents a tree and whether it represents a planar graph.
+
+\section{Experimental Result}
+We use the Erd\H{o}s--R'enyi graph generation model~\cite{erdos1959random} for our experiments. To generate the layouts, we use the classical spring layout algorithm~\cite{fruchterman1991graph}. Since the spring layout tries to distribute nodes according to a particular strategy, to verify how much node positions impact the model’s decisions, we also use a random layout.
+
+
+\bibliography{references_nn,references}
 \end{document}
